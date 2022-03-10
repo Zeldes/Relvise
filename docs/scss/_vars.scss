@@ -1,0 +1,51 @@
+$default: #737373;
+$title: #252b42;
+$white: #fff;
+$btn: #ff7b47;
+$accent: #0d5c63;
+$bg: #fafafa;
+$robin: rgb(49, 126, 49);
+$stripe: rgb(63, 182, 182);
+$hooli: rgb(113, 49, 195);
+$lya: rgb(195, 44, 125);
+$dark-bg: #17213b;
+$border: #e6e6e6;
+
+$xl :1030px;
+$ll: 977px;
+$l: 905px;
+$mp: 768px;
+$sm: 576px;
+$s: 375px;
+
+@mixin max-w($width) {
+  @media (max-width: $width) {
+    @content;
+  }
+  
+}
+
+%Montserrat-400 {
+  font-family: 'Montserrat', sans-serif;;
+  font-weight: 400;
+}
+
+%Montserrat-500 {
+  font-family: 'Montserrat', sans-serif;;
+  font-weight: 500;
+}
+
+%Montserrat-600 {
+  font-family: 'Montserrat', sans-serif;;
+  font-weight: 600;
+}
+
+%Montserrat-700 {
+  font-family: 'Montserrat', sans-serif;;
+  font-weight: 700;
+}
+
+%Montserrat-800 {
+  font-family: 'Montserrat', sans-serif;;
+  font-weight: 800;
+}

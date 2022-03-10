@@ -1,0 +1,236 @@
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+
+html,
+body {
+  height: 100%;
+}
+
+.main {
+  flex-grow: 1;
+}
+
+body {
+  @extend %Montserrat-500;
+  font-size: 14px;
+  color: $default;
+  line-height: 1.4;
+  background-color: $bg;
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.btn {
+  @extend %Montserrat-700;
+  line-height: 28px;
+  border-radius: 37px;
+  padding: 10px 36px;
+}
+
+.status-btn {
+  transition: all 0.4s;
+
+  &:hover {
+    background-color: $white;
+    color: $btn;
+
+  }
+}
+
+.title {
+  @extend %Montserrat-700;
+  font-size: 40px;
+  color: $title;
+  margin-bottom: 10px;
+  @include max-w($s) {
+    font-size: 30px;
+  }
+}
+
+.subtitle {
+  max-width: 511px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.status {
+  outline: 0;
+  transition: all 0.4s;
+
+  &:hover {
+    color: $accent;
+  }
+
+  &:focus {
+    box-shadow: 0 0 0 2px $white;
+    border-radius: 4px;
+  }
+
+  &:active {
+    text-shadow: 2px 2px 5px $title;
+    box-shadow: none;
+    color: $default;
+  }
+}
+
+.section-top {
+  max-width: 864px;
+  text-align: center;
+  margin: 0 auto 50px auto;
+  @include max-w($s) {
+    margin: 0 auto 30px auto;
+  }
+}
+
+.video {
+  position: relative;
+  background-image: url(../images/video-bg.jpg);
+  background-size: cover;
+  max-width: 597px;
+  width: 100%;
+  height: 400px;
+  outline: 0;
+  margin-right: 120px;
+  @include max-w($xl) {
+    margin-right: 0;
+  }
+  @include max-w($sm) {
+    max-width: 333px;
+    height: 256px;
+    outline: 0;
+    border-radius: 20px;
+  }
+}
+
+.video:focus {
+  box-shadow: 0 0 0 3px $accent;
+}
+
+
+.video::after {
+  content: '';
+  position: absolute;
+  top: 4%;
+  left: 40%;
+  bottom: 0;
+  margin: auto;
+  background-image: url(../images/icons/play.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 98px;
+  height: 98px;
+  transition: transform 0.4s;
+  @include max-w($sm) {
+      width: 68px;
+      height: 68px;
+  }
+}
+
+.video:hover::after {
+  transform: scale(1.3);
+}
+
+.video:active::after {
+  transform: scale(0.6);
+}
+
+.contact {
+  max-width: 290px;
+
+  &__item:not(:last-child) {
+    margin-bottom: 20px;
+  }
+
+  &__link {
+    position: relative;
+    padding-left: 36px;
+
+    &::before {
+      content: "";
+      position: absolute;
+      background-size: contain;
+      background-repeat: no-repeat;
+      top: 0;
+      left: -10px;
+      width: 24px;
+      height: 24px;
+    }
+  }
+}
+
+.contact__link--location::before {
+  background-image: url(../images/icons/blue-location.svg);
+}
+
+.contact__link--phone::before {
+  background-image: url(../images/icons/blue-phone.svg);
+}
+
+.contact__link--mail::before {
+  background-image: url(../images/icons/blue-telega.svg);
+}
+
+.burger {
+  position: relative;
+  display: none;
+  width: 44px;
+  height: 44px;
+  z-index: 11;
+  order: 1;
+  @include max-w($sm) {
+    display: block;
+  }
+}
+
+.burger__line,
+.burger::before,
+.burger::after {
+  content: '';
+  position: absolute;
+  background-color: $title;
+  right: 0;
+  width: 40px;
+  height: 3px;
+  top: 21px;
+  transition: transform 0.4s;
+}
+
+.burger::before {
+  top: 10px;
+}
+
+.burger::after {
+  bottom: 9px;
+  top: unset;
+}
+
+.burger--active::before {
+  transform: rotate(45deg);
+  top: 21px;
+}
+
+.burger--active::after {
+  transform: rotate(-45deg);
+  bottom: 21px;
+}
+
+.burger--active .burger__line {
+  transform: scale(0);
+}
